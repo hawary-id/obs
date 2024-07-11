@@ -1,11 +1,10 @@
-"use client"
-
-import { DatatableColumnAction } from "@/components/DatatableColumnAction"
-import { DataTableColumnHeader } from "@/components/DatatableColumnHeader"
-import { UserEditModal } from "@/components/modals/UserEditModal"
-import { UserViewModal } from "@/components/modals/UserViewModal"
-import { deleteUser } from "@/lib/user/api"
-import { ColumnDef } from "@tanstack/react-table"
+"use client";
+import { DatatableColumnAction } from "@/components/DatatableColumnAction";
+import { DataTableColumnHeader } from "@/components/DatatableColumnHeader";
+import { UserEditModal } from "@/components/modals/UserEditModal";
+import { UserViewModal } from "@/components/modals/UserViewModal";
+import { deleteUser } from "@/lib/user/api";
+import { ColumnDef } from "@tanstack/react-table";
 
 export type User = {
   id: number,
