@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# OBS Frontend Assignment
+
+## Introduction
+Welcome to the OBS Frontend assignment. This application is built using React and follows the guidelines provided in the assignment. The purpose of this application is to display a list of users, allow adding, editing, and deleting users, and to ensure the application is responsive and well-structured.
+
+## Features
+- Display a list of users with profile pictures.
+- View detailed information about each user in a modal.
+- Add, edit, and delete users.
+- Fetch initial user data from a mock API.
+- Responsive design for desktop and mobile devices.
+- State management using React Context.
+- TypeScript for type safety and improved code quality.
+- Configured with Eslint and Prettier for code consistency.
+- Unit testing with React Testing Library.
+
+## Tech Stack
+- React
+- TypeScript
+- React Context for state management
+- MUI (Material-UI) for UI components
+- Eslint and Prettier for code formatting and linting
+- React Testing Library for unit testing
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+Make sure you have the following installed on your system:
+- Node.js
+- npm or yarn
 
-```bash
-npm run dev
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/obs-frontend-assignment.git
+   cd obs-frontend-assignment
+
+1. Install dependencies:
+   ```bash
+   npm install
 # or
-yarn dev
+  ```bash
+  yarn install
+
+This will start the development server and you can view the application in your browser at http://localhost:3000.
+Running Tests
+To run unit tests, use the following command:
+  ```bash
+  npm test
 # or
-pnpm dev
-# or
-bun dev
-```
+yarn test
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
