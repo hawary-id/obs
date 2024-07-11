@@ -35,19 +35,9 @@ Make sure you have the following installed on your system:
    git clone https://github.com/your-username/obs-frontend-assignment.git
    cd obs-frontend-assignment
 
-1. Install dependencies:
+2. Install dependencies:
    ```bash
    npm install
-# or
+or
   ```bash
   yarn install
-
-This will start the development server and you can view the application in your browser at http://localhost:3000.
-Running Tests
-To run unit tests, use the following command:
-  ```bash
-  npm test
-# or
-yarn test
-
-
