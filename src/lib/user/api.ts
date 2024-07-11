@@ -1,4 +1,4 @@
-"use server";
+'use server';
 
 import axios from 'axios';
 
@@ -9,7 +9,7 @@ export async function fetchUsers() {
     const response = await axios.get(API_URL);
     return response.data;
   } catch (error) {
-    console.error("Error fetching users:", error);
+    console.error('Error fetching users:', error);
     throw error;
   }
 }
@@ -19,7 +19,10 @@ export const addUser = async (user: { name: string; email: string }) => {
   return response.data;
 };
 
-export const updateUser = async (id: number, user: { name: string; email: string }) => {
+export const updateUser = async (
+  id: number,
+  user: { name: string; email: string },
+) => {
   const response = await axios.get(`${API_URL}/${id}`);
   return response.data;
 };

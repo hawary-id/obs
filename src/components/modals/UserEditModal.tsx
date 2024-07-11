@@ -1,19 +1,26 @@
-"use client";
-import { User } from "@/app/columns";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { useToast } from "@/components/ui/use-toast";
-import { useUserContext } from "@/context/userContext";
-import { updateUser } from "@/lib/user/api";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-import { Separator } from "../ui/separator";
-import Loading from "../Loading";
-import { useForm } from "react-hook-form";
-import { userFormSchema } from "@/lib/form-schema";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
+'use client';
+import { User } from '@/app/columns';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { useToast } from '@/components/ui/use-toast';
+import { useUserContext } from '@/context/userContext';
+import { updateUser } from '@/lib/user/api';
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
+import { Separator } from '../ui/separator';
+import Loading from '../Loading';
+import { useForm } from 'react-hook-form';
+import { userFormSchema } from '@/lib/form-schema';
+import { zodResolver } from '@hookform/resolvers/zod';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '../ui/form';
 
 interface UserEditModalProps {
   userId: number;
@@ -26,25 +33,25 @@ export function UserEditModal({ userId }: UserEditModalProps) {
   const form = useForm<User>({
     resolver: zodResolver(userFormSchema),
     defaultValues: {
-      name: "",
-      username: "",
-      email: "",
+      name: '',
+      username: '',
+      email: '',
       address: {
-        street: "",
-        suite: "",
-        city: "",
-        zipcode: "",
+        street: '',
+        suite: '',
+        city: '',
+        zipcode: '',
         geo: {
-          lat: "",
-          lng: "",
+          lat: '',
+          lng: '',
         },
       },
-      phone: "",
-      website: "",
+      phone: '',
+      website: '',
       company: {
-        name: "",
-        catchPhrase: "",
-        bs: "",
+        name: '',
+        catchPhrase: '',
+        bs: '',
       },
     },
   });
@@ -55,42 +62,46 @@ export function UserEditModal({ userId }: UserEditModalProps) {
       form.reset(selectedUser);
     } else {
       toast({
-        variant: "destructive",
-        title: "Error",
-        description: "User not found.",
+        variant: 'destructive',
+        title: 'Error',
+        description: 'User not found.',
       });
     }
   }, [userId, users, form.reset]);
 
-  const onSubmit  = async (data: User) => {
+  const onSubmit = async (data: User) => {
     try {
       updateUserContext(data);
       toast({
-        title: "Success",
-        description: "User updated successfully.",
+        title: 'Success',
+        description: 'User updated successfully.',
       });
       router.refresh();
     } catch (error) {
       toast({
-        variant: "destructive",
-        title: "Error",
-        description: "Failed to update user.",
+        variant: 'destructive',
+        title: 'Error',
+        description: 'Failed to update user.',
       });
-      console.error("Error updating user:", error);
+      console.error('Error updating user:', error);
     }
   };
-    
-  if (!form.getValues('name')) return <Loading />
+
+  if (!form.getValues('name')) return <Loading />;
   return (
     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
       <Form {...form}>
         <div className="flex items-center justify-center space-x-4">
           <Avatar className="h-32 w-32 border">
-            <AvatarImage src={`https://api.dicebear.com/5.x/micah/svg?seed=${userId}`} />
-            <AvatarFallback className="text-center">{form.getValues("name")}</AvatarFallback>
+            <AvatarImage
+              src={`https://api.dicebear.com/5.x/micah/svg?seed=${userId}`}
+            />
+            <AvatarFallback className="text-center">
+              {form.getValues('name')}
+            </AvatarFallback>
           </Avatar>
         </div>
-        <Separator className="my-3"/>
+        <Separator className="my-3" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
           <FormField
             control={form.control}
@@ -203,7 +214,7 @@ export function UserEditModal({ userId }: UserEditModalProps) {
             )}
           />
         </div>
-        <Separator/>
+        <Separator />
 
         <div className="flex justify-end mt-2">
           <Button type="submit">Save changes</Button>
