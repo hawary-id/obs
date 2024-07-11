@@ -9,10 +9,6 @@ export const userFormSchema = z.object({
     suite: z.string().min(1, { message: 'Suite is required' }),
     city: z.string().min(1, { message: 'City is required' }),
     zipcode: z.string().min(1, { message: 'Zip code is required' }),
-    //   geo: z.object({
-    //     lat: z.string().min(1, { message: "Latitude is required" }),
-    //     lng: z.string().min(1, { message: "Longitude is required" }),
-    //   }),
   }),
   phone: z.string().min(1, { message: 'Phone is required' }),
   website: z.string().min(1, { message: 'Website is required' }),
